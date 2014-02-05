@@ -5,7 +5,7 @@ use strict;
 use warnings;
 use base qw(Exporter);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 our %EXPORT_TAGS = ( 'all' => [ qw(
 	
@@ -24,7 +24,7 @@ sub new {
   my $self = {
     next => $options{start},
     s2n  => {},
-    n2s  => {},
+    n2s  => [],
   };
   
   bless $self, $class;
@@ -35,7 +35,7 @@ sub s2n {
 
   unless (exists $self->{s2n}{$s}) {
     $self->{s2n}{$s} = $self->{next};
-    $self->{n2s}{$self->{next}} = $s;
+    $self->{n2s}[$self->{next}] = $s;
     $self->{next}++;
   }
 
@@ -44,7 +44,7 @@ sub s2n {
 
 sub n2s {
   my ($self, $n) = @_;
-  return $self->{n2s}{$n};
+  return $self->{n2s}[$n];
 }
 
 1;

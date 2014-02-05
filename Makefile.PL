@@ -2,6 +2,7 @@ use 5.008000;
 use ExtUtils::MakeMaker;
 
 WriteMakefile(
+  MIN_PERL_VERSION  => 5.008000,
   NAME              => 'Data::AutoBimap',
   VERSION_FROM      => 'lib/Data/AutoBimap.pm',
   PREREQ_PM         => {
