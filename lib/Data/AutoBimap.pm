@@ -1,11 +1,11 @@
 package Data::AutoBimap;
 
-use 5.008000;
+use 5.012000;
 use strict;
 use warnings;
 use base qw(Exporter);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 our %EXPORT_TAGS = ( 'all' => [ qw(
 	
